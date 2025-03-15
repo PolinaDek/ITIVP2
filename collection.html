@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин одежды</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4f5fed;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .home h2 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .home p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .center-image {
+            display: block;
+            margin: 20px auto; /* Центрирование изображения */
+            max-width: 100%;
+            height: auto; /* Адаптивное изображение */
+        }
+
+        /* Стили для каталога товаров */
+        .catalog {
+            display: flex;
+            flex-wrap: wrap; /* Упаковка элементов в строку */
+            gap: 20px; /* Отступы между элементами */
+            justify-content: center; /* Центрирование элементов */
+        }
+
+        .category {
+            text-align: center; /* Центрирование текста */
+        }
+
+        .category img {
+            width: 250px; /* Ширина изображения */
+            height: auto; /* Автоматическая высота */
+            border-radius: 10px; /* Скругленные углы */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Тень для изображения */
+        }
+
+        .category p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* Медиа-запрос для мобильных устройств (максимальная ширина 768px) */
+        @media (max-width: 768px) {
+            .catalog {
+                display: grid; /* Сетка вместо flex */
+                grid-template-columns: repeat(2, 1fr); /* Два элемента в строке */
+                gap: 15px; /* Уменьшенные отступы между элементами */
+                justify-content: center; /* Центрирование элементов */
+                align-items: center; /* Центрирование вертикально */
+                padding-bottom: 20px; /* Отступ снизу */
+            }
+
+            .category img {
+                width: 150px; /* Уменьшенная ширина изображения для мобильных устройств */
+                height: auto; 
+                margin-bottom: 10px; 
+                border-radius: 8px; 
+                box-shadow: none; 
+            }
+            
+            .category p {
+                font-size: 1em; /* Уменьшенный размер текста под изображением */
+                text-align: center;
+                margin-top: 5px;
+                color:#333333
+             }
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Магазин одежды</h1>
+        <!-- Кнопка бургер-меню -->
+        <button class="burger-menu-button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Навигация -->
+        <nav class="main-nav">
+            <a href="index2.html">Главная</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="collection.html">Коллекция</a>
+        </nav>
+    </header>
+
+    <div class="container">
+      <div class="catalog">
+          <nav class="category">
+              <a href="futbolki.html">
+                  <img src="img/futbolki.webp" alt="Футболки">
+                  <p>Футболки</p>
+              </a>
+          </nav>
+          <nav class="category">
+              <a href="platya.html">
+                  <img src="img/platya.webp" alt="Платья">
+                  <p>Платья</p>
+              </a>
+          </nav>
+          <nav class="category">
+              <a href="hudi.html">
+                  <img src="img/hudi.webp" alt="Худи">
+                  <p>Худи</p>
+              </a>
+          </nav>
+          <nav class="category">
+              <a href="shorty.html">
+                  <img src="img/shorty.webp" alt="Шорты">
+                  <p>Шорты</p>
+              </a>
+          </nav>
+          <nav class="category">
+              <a href="shtany.html">
+                  <img src="img/shtany.webp" alt="Штаны">
+                  <p>Штаны</p>
+              </a>
+          </nav>
+          <nav class="category">
+              <a href="sportivnye_kostyumy.html">
+                  <img src="img/sportivnye_kostyumy.webp" alt="Спортивные костюмы">
+                  <p>Спортивные костюмы</p>
+              </a>
+          </nav>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Магазин одежды. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипт для бургер-меню -->
+    <script>
+      const burgerButton = document.querySelector('.burger-menu-button');
+      const nav = document.querySelector('.main-nav');
+
+      burgerButton.addEventListener('click', () => {
+          nav.classList.toggle('nav-active');
+      });
+    </script>
+</body>
+</html>
