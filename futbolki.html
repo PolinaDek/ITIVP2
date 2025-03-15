@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Футболки</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      /* Основные стили */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #4f5fed;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        padding: 20px;
+        max-width: 1200px; /* Ограничиваем ширину контента */
+        margin: 0 auto; /* Центрируем контент */
+      }
+
+      /* Горизонтальное меню по умолчанию */
+      .main-nav {
+        display: flex;
+      }
+
+      /* Стили для кнопки бургер-меню */
+      .burger-menu-button {
+        display: none; /* Скрыта на десктопе */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+      }
+
+      /* Стили для боковой панели */
+      .sidebar {
+        width: 200px;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      .sidebar h2 {
+        margin-top: 0;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar ul li a {
+        color: #000000;
+      }
+
+      /* Стили для товаров */
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .product-item {
+        width: calc(25% - 20px);
+        text-align: center;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .product-item img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* Убираем отступ снизу у картинок */
+        margin: 0 auto;
+      }
+
+       /* Добавляем overflow: hidden для header и footer */
+      header, footer {
+        overflow: hidden;
+      }
+
+      /* Медиа-запрос для мобильных устройств */
+      @media (max-width: 768px) {
+        .burger-menu-button {
+          display: block; /* Показываем кнопку бургер-меню */
+          cursor: pointer;
+          z-index: 11; /* Поверх меню */
+        }
+
+        .main-nav {
+          display: none; /* Скрыто по умолчанию */
+          position: fixed; /* Меню фиксируется поверх контента */
+          top: 0;
+          right: 0;
+          width: 200px; /* Ширина выпадающего меню */
+          height: 100%; /* Высота на весь экран */
+          background-color: #4f5fed; /* Цвет фона меню */
+          flex-direction: column; /* Вертикальный список */
+          justify-content: center; /* Центрирование ссылок */
+          align-items: center; /* Центрирование ссылок */
+          box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Тень для меню */
+          z-index: 10; /* Поверх контента */
+        }
+
+        .main-nav.nav-active {
+          display: flex; /* Показываем меню при клике на бургер */
+        }
+
+        .main-nav a {
+          margin-bottom: 20px; /* Отступ между ссылками */
+          font-size: 1.2em; /* Увеличиваем размер шрифта ссылок */
+        }
+
+        /* Изменяем макет на мобильных устройствах */
+        .catalog1 {
+          display: block; /* Боковая панель и контент располагаются друг под другом */
+        }
+
+        .sidebar {
+          width: 100%; /* Боковая панель занимает всю ширину */
+          padding: 10px;
+        }
+
+        .products {
+          padding: 10px;
+          justify-content: space-around; /* Равномерное распределение товаров */
+        }
+
+        .product-item {
+          width: calc(50% - 10px); /* Два товара в строке */
+          margin-bottom: 20px; /* Отступ между товарами */
+        }
+      }
+    </style>
+  </head>
+  <body class="other">
+    <header>
+      <h1>Футболки</h1>
+      <!-- Кнопка бургер-меню -->
+      <button class="burger-menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Навигация -->
+      <nav class="main-nav">
+        <a href="index2.html">Главная</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="collection.html">Коллекция</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="catalog1">
+        <nav class="sidebar">
+          <h2>Категории</h2>
+          <ul>
+            <li><a href="futbolki.html">Футболки</a></li>
+            <li><a href="platya.html">Платья</a></li>
+            <li><a href="hudi.html">Худи</a></li>
+            <li><a href="shorty.html">Шорты</a></li>
+            <li><a href="shtany.html">Штаны</a></li>
+            <li><a href="sportivnye_kostyumy.html">Спорт</a></li>
+          </ul>
+        </nav>
+
+        <!-- Ассортимент товаров -->
+        <div class="products">
+          <div class="product-item">
+            <img src="img/futbolka1.webp" alt="Футболка 1" />
+            <p class="product-name">Футболка 1</p>
+            <p class="product-price">Цена: 1000 руб.</p>
+            <p class="product-brand">Бренд: Brand A</p>
+          </div>
+          <div class="product-item">
+            <img src="img/futbolka2.webp" alt="Футболка 2" />
+            <p class="product-name">Футболка 2</p>
+            <p class="product-price">Цена: 1200 руб.</p>
+            <p class="product-brand">Бренд: Brand B</p>
+          </div>
+          <div class="product-item">
+            <img src="img/futbolka3.webp" alt="Футболка 3" />
+            <p class="product-name">Футболка 3</p>
+            <p class="product-price">Цена: 900 руб.</p>
+            <p class="product-brand">Бренд: Brand C</p>
+          </div>
+          <div class="product-item">
+            <img src="img/futbolka4.webp" alt="Футболка 4" />
+            <p class="product-name">Футболка 4</p>
+            <p class="product-price">Цена: 1100 руб.</p>
+            <p class="product-brand">Бренд: Brand D</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Магазин одежды. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипт для бургер-меню -->
+    <script>
+      const burgerButton = document.querySelector('.burger-menu-button');
+      const nav = document.querySelector('.main-nav');
+
+      burgerButton.addEventListener('click', () => {
+          nav.classList.toggle('nav-active');
+      });
+    </script>
+  </body>
+</html>
